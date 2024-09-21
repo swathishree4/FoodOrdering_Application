@@ -1,0 +1,119 @@
+/* General styling for the body */
+body {
+  background-color: #f8f9fa; /* Light background to keep things bright */
+  font-family: 'Arial', sans-serif;
+}
+
+/* Navbar styles */
+.navbar {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  padding: 10px 15px;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff5e00; /* Blue color for branding */
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.nav-link {
+  font-weight: 500;
+}
+
+.navbar .btn {
+  font-size: 14px;
+  padding: 8px 20px;
+  border-radius: 5px;
+}
+
+/* Title section styling */
+.text-center h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #007bff;
+}
+
+.text-center p {
+  color: #6c757d;
+  font-size: 16px;
+}
+
+/* Card styles */
+.card {
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Lift the card on hover */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.card-text {
+  color: #6c757d;
+  font-size: 14px;
+}
+
+.badge {
+  font-size: 14px;
+  padding: 5px 10px;
+}
+
+/* Button styling */
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  padding: 10px 0;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  transition: background-color 0.3s ease;
+}
+
+/* Spacing for the card buttons */
+.card-body .mt-3 {
+  margin-top: 20px !important;
+}
+
+/* Card box shadow on hover */
+.card:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .text-center h2 {
+    font-size: 28px;
+  }
+
+  .card-title {
+    font-size: 16px;
+  }
+
+  .card-img-top {
+    height: auto;
+  }
+
+  .navbar-nav .nav-item {
+    margin-bottom: 10px;
+  }
+}

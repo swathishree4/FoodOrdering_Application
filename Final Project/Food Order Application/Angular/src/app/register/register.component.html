@@ -1,0 +1,55 @@
+<div class="container mt-5 p-4">
+  <div class="card register-card shadow-lg">
+    <div class="card-header text-center bg-primary text-white">
+      <h3 class="card-title">Create Your Account</h3>
+    </div>
+    <div class="card-body">
+      <!-- Add a centered image above the form -->
+      <div class="image-container">
+        <img src="public/logo.jfif" alt="Decorative" class="decorative-image">
+      </div>
+
+      <form (ngSubmit)="onSubmit()" #registerForm="ngForm" novalidate>
+        <div class="form-group">
+          <label for="fullName" class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="fullName" name="fullName" [(ngModel)]="user.fullName" required>
+          <div *ngIf="registerForm.submitted && !registerForm.form.controls['fullName']?.valid" class="text-danger">
+            Full Name is required
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" name="email" [(ngModel)]="user.email" required>
+          <div *ngIf="registerForm.submitted && !registerForm.form.controls['email']?.valid" class="text-danger">
+            A valid email is required
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" name="password" [(ngModel)]="user.passwordHash" required minlength="6">
+          <div *ngIf="registerForm.submitted && !registerForm.form.controls['password']?.valid" class="text-danger">
+            Password must be at least 6 characters
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="role" class="form-label">Role</label>
+          <select class="form-control" id="role" name="role" [(ngModel)]="user.role" required>
+            <option value="" disabled>Select your role</option>
+            <option value="Customer">Customer</option>
+          </select>
+          <div *ngIf="registerForm.submitted && !registerForm.form.controls['role']?.valid" class="text-danger">
+            Please select a role
+          </div>
+        </div>
+
+        <div class="text-center mt-4 button-group">
+          <button type="submit" class="btn btn-primary btn-lg" [disabled]="!registerForm.valid">Create Account</button>
+          <button type="button" class="btn btn-secondary btn-lg ml-3" (click)="goBack()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

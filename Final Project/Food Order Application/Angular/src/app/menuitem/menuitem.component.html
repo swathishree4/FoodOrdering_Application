@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Foodie</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr ">
+      <!-- Go Back Button aligned to the left -->
+      <li class="nav-item">
+        <button class="btn btn-secondary nav-link" (click)="goBack()">Go Back</button>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-primary nav-link" (click)="home()">Home</button>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <!-- Home Button aligned to the right -->
+      
+    </ul>
+  </div>
+</nav>
+
+<!-- Menu Items Section -->
+<div class="container my-5">
+  <h2 class="my-4 text-center display-4">Menu Items</h2>
+
+  <div *ngIf="menuItems && menuItems.length > 0" class="row">
+    <div class="col-md-4 mb-4" *ngFor="let item of menuItems">
+      <div class="card shadow-sm border-light h-100">
+        <img *ngIf="item.image" [src]="item.image" class="card-img-top menu-img" alt="{{ item.name }}">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">{{ item.name }}</h5>
+          <p class="card-text">{{ item.description }}</p>
+          <p class="card-text font-weight-bold text-primary">Price: {{ item.price | currency }}</p>
+
+          <div class="mt-auto">
+            <button class="btn btn-outline-primary btn-block" (click)="addToCart(item)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="menuItems && menuItems.length === 0" class="text-center">
+    <p>No menu items available.</p>
+  </div>
+
+  <div *ngIf="!menuItems" class="text-center">
+    <p>Loading menu items...</p>
+  </div>
+</div>

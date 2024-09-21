@@ -1,0 +1,110 @@
+/* Styles for the entire container */
+.container {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Card styles */
+.customer-card {
+  background-color: #f8f9fa;
+  border: none;
+  border-radius: 10px;
+}
+
+.card-header {
+  border-bottom: none;
+  padding: 15px;
+  border-radius: 10px 10px 0 0;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+/* User info styling */
+.user-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Button styles */
+.button-group {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.animated-btn {
+  transition: transform 0.3s ease-in-out;
+}
+
+.animated-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Food icons */
+.food-icons img {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s;
+}
+
+.food-icons img:hover {
+  transform: scale(1.2);
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .user-name {
+    font-size: 1.5rem;
+  }
+
+  .button-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .food-icons img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  .user-name {
+    font-size: 1.2rem;
+  }
+
+  .card-title {
+    font-size: 1.3rem;
+  }
+
+  .food-icons img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .button-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

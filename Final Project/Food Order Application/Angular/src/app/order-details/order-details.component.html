@@ -1,0 +1,30 @@
+<div class="order-details-wrapper d-flex justify-content-center align-items-center vh-100" *ngIf="orderDetails">
+  <div class="order-details-container card shadow-lg p-5">
+    <h2 class="text-center mb-4">Order Details for Order ID: {{ orderDetails.orderId }}</h2>
+
+    <div class="order-info">
+      <p><strong>Customer Name:</strong> {{ orderDetails.customerName }}</p>
+      <p><strong>Phone:</strong> {{ orderDetails.customerPhone }}</p>
+      <p><strong>Address:</strong> {{ orderDetails.customerPlatNo }}, {{ orderDetails.customerStreet }},
+        {{ orderDetails.customerCity }}, {{ orderDetails.customerState }}</p>
+      <p><strong>Total Price:</strong> {{ orderDetails.totalPrice | currency }}</p>
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center mt-4">
+      <!-- Dropdown for delivery staff -->
+      <label for="deliveryStaff" class="mr-3"><strong>Assign Delivery Staff:</strong></label>
+      <select class="form-control w-50" id="deliveryStaff" [(ngModel)]="delivery.deliveryStaffId">
+        <option *ngFor="let staff of deliveryStaff" [value]="staff.userId">
+          {{ staff.fullName }}
+        </option>
+      </select>
+      <button class="btn btn-primary ml-3" (click)="assignOrder(orderDetails.orderId)">
+        Assign Order
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="loading-wrapper d-flex justify-content-center align-items-center vh-100" *ngIf="!orderDetails">
+  <p>Loading order details...</p>
+</div>

@@ -1,0 +1,41 @@
+<div class="order-list-container">
+    <h2>Orders List</h2>
+    <table class="order-table" *ngIf="data ? data.length > 0 : 0; else noData">
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Customer Name</th>
+          
+          <th>Phone</th>
+          <th>Address</th>
+          <th>Total Price</th>
+          <th>Assign Delivery Staff</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of data">
+          <td>{{ order.orderId }}</td>
+          <td>{{ order.customerName }}</td>
+          
+          <td>{{ order.customerPhone }}</td>
+          <td>
+            {{ order.customerPlatNo }}, {{ order.customerStreet }}, 
+            {{ order.customerCity }}, {{ order.customerState }}
+          </td>
+          <td>{{ order.totalPrice | currency }}</td>
+          
+          <td>
+            <button (click)="viewOrderDetails(order.orderId)">Assign</button>
+          </td> 
+        </tr>
+      </tbody>
+    </table>
+    
+    <ng-template #noData>
+      <p>No orders available.</p>
+    </ng-template>
+  
+    <button class="go-back-btn" (click)="back()">Go Back</button>
+  </div>
+  

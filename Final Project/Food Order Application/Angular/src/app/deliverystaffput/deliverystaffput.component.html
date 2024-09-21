@@ -1,0 +1,39 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="card shadow-lg p-5 rounded-lg" style="max-width: 500px; width: 100%;">
+    <h1 class="text-center mb-4">Update Delivery Staff</h1>
+    <form (ngSubmit)="onUpdate()">
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="fullName"
+          name="fullName"
+          [(ngModel)]="user.fullName"
+          required
+        />
+      </div>
+
+      <div class="form-group mt-3">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          [(ngModel)]="user.email"
+          required
+        />
+      </div>
+
+      <div class="d-flex justify-content-between mt-4">
+        <button type="submit" class="btn btn-success btn-block">Update Delivery Staff</button>
+      </div>
+    </form>
+
+    <div class="d-flex justify-content-between mt-4">
+      <button *ngIf="isDeliveryStaff" (click)="goBack(user.userId)" class="btn btn-outline-primary">Back to List</button>
+      <button *ngIf="isAdmin" routerLink="/customerget" class="btn btn-outline-primary">Back to List</button>
+    </div>
+  </div>
+</div>

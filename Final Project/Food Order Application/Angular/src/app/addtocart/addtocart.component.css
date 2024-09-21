@@ -1,0 +1,54 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  h2, h3 {
+    color: #333;
+  }
+  
+  .card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+  }
+  
+  .card-body {
+    padding: 16px;
+  }
+  
+  input[type="number"], input[type="text"], input[type="email"], input[type="tel"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  button {
+    margin-top: 16px;
+    padding: 12px;
+    border-radius: 4px;
+  }
+  
+  .btn-block {
+    width: 100%;
+  }
+  .order-details {
+    display: block;
+  }
+  
+  @media (max-width: 600px) {
+    .container {
+      padding: 16px;
+    }
+  
+    .form-group {
+      margin-bottom: 16px;
+    }
+  
+    button {
+      font-size: 16px;
+    }
+  }
+  

@@ -1,0 +1,36 @@
+.food-icons {
+    margin: 0 auto;
+    max-width: 600px; /* Adjust as needed */
+  }
+  
+  .food-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .food-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  .delivery-list-container {
+    margin: 20px;
+  }
+  
+  .delivery-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .delivery-table th, .delivery-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .delivery-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  

@@ -1,0 +1,59 @@
+<div class="container mt-5 p-4" style="background-image: url('public/custbg.jfif'); background-size: cover; background-position: center; height: 100vh; padding: 20px;">
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Foodie</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <button class="btn btn-info nav-link mr-3" (click)="goBack()">Home</button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-success nav-link mr-3" (click)="exploreRestaurant()">Explore Restaurant</button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-warning nav-link mr-3" (click)="editAccount()">Edit Account</button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-danger nav-link mr-3" (click)="deleteAccount()">Delete Account</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="card customer-card shadow-lg mt-4">
+    <div class="card-header text-center bg-secondary text-white">
+      <h3 class="card-title">Customer Details</h3>
+    </div>
+
+    <div class="card-body">
+      <div *ngIf="user; else noData">
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <h4 class="user-name">Welcome {{ user.fullName }}</h4>
+            <p><strong>Your Email Id:</strong> {{ user.email }}</p>
+            <p><strong>Your Role:</strong> {{ user.role }}</p>
+          </div>
+        </div>
+
+        <!-- Food Icons Section -->
+        <div class="d-flex justify-content-center my-4 food-icons">
+          <img src="public/pizza.jfif" alt="Pizza Icon" class="food-icon mx-2">
+          <img src="public/burger.jfif" alt="Burger Icon" class="food-icon mx-2">
+          <img src="public/sushi.jfif" alt="Sushi Icon" class="food-icon mx-2">
+          <img src="public/coffee.jfif" alt="Coffee Icon" class="food-icon mx-2">
+        </div>
+      </div>
+
+      <!-- Fallback for when no user data is available -->
+      <ng-template #noData>
+        <p class="text-center">No user data available.</p>
+        <div class="text-center">
+          <button class="btn btn-primary mt-3" (click)="goBack()">Go Back</button>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+.order-details-wrapper,
+.loading-wrapper {
+  height: 100vh;
+}
+
+.order-details-container {
+  max-width: 600px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.order-info p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.form-control {
+  border-radius: 8px;
+  height: 45px;
+}
+
+.btn {
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+}
+
+p {
+  text-align: center;
+  font-size: 1.2rem;
+}

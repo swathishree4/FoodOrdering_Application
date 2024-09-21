@@ -1,0 +1,92 @@
+<div class="container mt-5 p-4" style="background-image: url('public/bgg.jfif'); background-size: cover; background-position: center; height: 100vh; padding: 20px;">
+    <div class="card customer-card shadow-lg">
+      <div class="card-header text-center  text-black">
+        <h3 class="card-title">Delivery Staff Details</h3>
+      </div>
+      <div class="mt-4 text-center button-group">
+        <button class="btn btn-primary animated-btn mr-3" (click)="goBack()">Go Back</button>
+        
+        <button class="btn btn-warning animated-btn mr-3" (click)="editAccount()">Edit Account</button>
+        <button class="btn btn-danger animated-btn" (click)="deleteAccount()">Delete Account</button>
+     
+      </div>
+      
+      <div class="card-body">
+        <div *ngIf="user; else noData">
+          <div class="row align-items-center">
+            
+           
+            <div class="col-md-8">
+              <h4 class="user-name">Welcome {{ user.fullName }}</h4>
+              <p><strong>Email:</strong> {{ user.email }}</p>
+              <p><strong>Role:</strong> {{ user.role }}</p>
+            </div>
+          </div>
+          
+          <!-- Food Icons Section -->
+          <div class="d-flex justify-content-center my-4 food-icons">
+            <img src="public/d1.jfif" alt="Pizza Icon" class="food-icon mx-2">
+            <img src="public/bg.jpg" alt="Burger Icon" class="food-icon mx-2">
+            
+          </div>
+        </div>
+        <ng-template #noData>
+          <p class="text-center">No user data available.</p>
+          <div class="text-center">
+            <button class="btn btn-primary mt-3" (click)="goBack()">Go Back</button>
+          </div>
+        </ng-template>
+      </div>
+      
+      <div class="delivery-list-container">
+        <h2>Delivery List</h2>
+      
+        <!-- Customer Details Section -->
+        <div *ngIf="selectedCustomer" class="customer-details-card">
+          <h3>Customer Details</h3>
+          <p><strong>Name:</strong> {{ selectedCustomer.customerName }}</p>
+          <p><strong>Email:</strong> {{ selectedCustomer.customerEmail }}</p>
+          <p><strong>Phone:</strong> {{ selectedCustomer.customerPhone }}</p>
+          <p><strong>Plat No:</strong> {{ selectedCustomer.customerPlatNo }}</p>
+          <p><strong>Street:</strong> {{ selectedCustomer.customerStreet }}</p>
+          <p><strong>City:</strong> {{ selectedCustomer.customerCity }}</p>
+          
+       
+        </div>
+      
+        <!-- Display the list of deliveries -->
+        <table class="delivery-table" *ngIf="deliveries.length > 0; else noDeliveries">
+          <thead>
+            <tr>
+              <th>Delivery ID</th>
+              <th>Order ID</th>
+              <th>Delivery Staff ID</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let delivery of deliveries">
+              <td>{{ delivery.deliveryId }}</td>
+              <td>{{ delivery.orderId }}</td>
+              <td>{{ delivery.deliveryStaffId }}</td>
+              <td>{{ delivery.status }}</td>
+              <td>
+                <button (click)="showCustomerDetails(delivery.orderId)">Customer Details</button>
+                <button *ngIf="delivery.status !== 'Success'" class="ml-3" (click)="takeOrder(delivery.deliveryId)">
+                  Take Order
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      
+        <ng-template #noDeliveries>
+          <p>No deliveries available.</p>
+        </ng-template>
+      </div>
+      
+      
+    </div>
+  </div>
+  

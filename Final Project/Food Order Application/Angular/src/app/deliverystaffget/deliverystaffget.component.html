@@ -1,0 +1,30 @@
+<div class="container">
+    <h2>Data List</h2>
+    <ul *ngIf="data.length > 0; else noData">
+      <li *ngFor="let item of data" class="data-item">
+        <div class="details">
+          <strong>Name:</strong> {{ item.fullName }} <br>
+          <strong>Email:</strong> {{ item.email }} <br>
+          <strong>Role:</strong> {{ item.role }} <br>
+          <strong>Orders:</strong> {{ item.orders }} <br>
+          <strong>Owned Restaurants:</strong> {{ item.ownedRestaurants }} <br>
+          <strong>Deliveries:</strong> {{ item.deliveries }} <br>
+        </div>
+  
+        <div class="actions">
+          <button class="btn btn-edit" (click)="editAccount(item.userId)">Edit</button>
+          <button class="btn btn-delete" (click)="deleteCustomer(item.userId)">Delete</button>
+        </div>
+      </li>
+    </ul>
+  
+    <ng-template #noData>
+      <p>No data available</p>
+    </ng-template>
+  
+  </div>
+  
+  <div class="go-back-container">
+  <button class="btn btn-primary" (click)="home()">Go Back</button>
+  </div>
+  

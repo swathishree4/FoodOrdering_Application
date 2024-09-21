@@ -1,0 +1,112 @@
+/* General styling for the admin component */
+.admin-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-color: antiquewhite;
+  }
+  
+  .header {
+    margin-bottom: 30px;
+  }
+  
+  .header h1 {
+    font-size: 2.5rem;
+    color: #333;
+  }
+  
+  .header .quote {
+    font-style: italic;
+    color: #555;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+  }
+  
+  .banner-img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 20px;
+  }
+  
+  .btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .btn:hover {
+    transform: scale(1.05);
+  }
+  
+  .btn-customer {
+    background-color: #28a745;
+  }
+  
+  .btn-delivery {
+    background-color: #17a2b8;
+  }
+  
+  .btn-restaurant {
+    background-color: #eed815;
+  }
+
+  .btn-back {
+    background-color: #872fec;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .banner-img {
+      width: 100%;
+      height: auto;
+    }
+  
+    .header h1 {
+      font-size: 2rem;
+    }
+  
+    .header .quote {
+      font-size: 1rem;
+    }
+  
+    .button-group {
+      flex-direction: column;
+    }
+  
+    .btn {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .header h1 {
+      font-size: 1.5rem;
+    }
+  
+    .header .quote {
+      font-size: 0.9rem;
+    }
+  
+    .btn {
+      font-size: 1rem;
+      padding: 12px 25px;
+    }
+  }
+  

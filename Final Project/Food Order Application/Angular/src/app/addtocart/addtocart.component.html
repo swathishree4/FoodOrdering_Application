@@ -1,0 +1,36 @@
+
+  <div class="container">
+    <h2 class="my-4 text-center">Your Cart</h2>
+  
+    <div *ngIf="cartItems.length > 0" class="order-details">
+      <div class="card mb-4" *ngFor="let cartItem of cartItems; let i = index">
+        <div class="card-body">
+          <h5 class="card-title">{{ cartItem.item.name }}</h5>
+          <p class="card-text">Price: {{ cartItem.item.price | currency }}</p>
+  
+          <label for="quantity">Quantity:</label>
+          <input 
+            type="number" 
+            [(ngModel)]="cartItem.quantity" 
+            min="1" 
+            (change)="updateTotalPrice(cartItem.item, cartItem.quantity)" />
+  
+          <!-- Remove Button -->
+          <button class="btn btn-danger mt-2" (click)="removeCartItem(i)">Remove</button>
+        </div>
+      </div>
+  
+      <p class="font-weight-bold">Total Price: {{ totalPrice | currency }}</p>
+      <button type="submit" class="btn btn-primary btn-block" (click)="placeOrder()">Place Order</button>
+      <button type="button" class="btn btn-secondary btn-block" (click)="goBack()">Go Back</button>
+    </div>
+  
+    <div *ngIf="cartItems.length === 0" class="text-center">
+      <p>No items in the cart.</p>
+    </div>
+  </div>
+  
+  
+
+    
+  

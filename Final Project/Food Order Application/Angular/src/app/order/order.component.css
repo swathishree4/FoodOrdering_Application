@@ -1,0 +1,48 @@
+.order-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-container h2 {
+  font-size: 2rem;
+  color: #007bff;
+}
+
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  height: 45px;
+  font-size: 1rem;
+  border-radius: 8px;
+}
+
+.form-buttons button {
+  width: 48%;
+}
+
+.btn-lg {
+  font-size: 1.25rem;
+  padding: 0.75rem 1.5rem;
+}
+
+.invalid-feedback {
+  color: #ff6b6b;
+}
+
+@media (max-width: 768px) {
+  .order-container {
+    padding: 1.5rem;
+  }
+
+  .form-buttons button {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
